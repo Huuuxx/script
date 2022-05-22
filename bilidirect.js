@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # ～ B站启动时开启直连模式（2022-05-21）@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/x\/offline\/version url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_startup_direct.js
+^https?:\/\/api\.bilibili\.com\/x\/offline\/version url script-response-body https://raw.githubusercontent.com/myttt33/script/main/bilidirect.js
 
 [mitm] 
 
@@ -28,7 +28,7 @@ hostname=api.bilibili.com
 
 const message = {
     action: "set_policy_state",
-    content: {["StreamingSE"]: "direct"}
+    content: {["Bilibili"]: "direct"}
 };
 $configuration.sendMessage(message).then(resolve => {
     if (resolve.error) {
